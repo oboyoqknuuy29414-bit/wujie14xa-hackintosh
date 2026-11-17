@@ -1,5 +1,7 @@
 # WUJIE 14XA · macOS Tahoe 26.6 黑苹果
 
+[English](README_EN.md) · 中文
+
 机械革命 **无界 14XA**（AMD Ryzen 7 H 255 + Radeon 780M）OpenCore 配置与安装记录。
 
 > ⚠️ 本仓库仅为一台同型号机器的实测记录，不保证适用于所有同型号机器，请以实际为准。
@@ -16,20 +18,18 @@
 
 ## 安装
 
-1.使用etcher在win下制作启动U盘，并将该EFI放入U盘的启动分区
+1. 使用 etcher 在 win 下制作启动 U 盘，并将该 EFI 放入 U 盘的启动分区
+2. 在启动 U 盘中将 macOS 安装到你的磁盘上
+3. 在启动 U 盘（如果你使用 RDR 恢复镜像法，则可以使用硬盘上的 rec 分区）
+4. nullarc 安装过程参考其官方文档
 
-2.在启动U盘中将macos安装到你的磁盘上
-
-3.在启动U盘（如果你使用RDR恢复镜像法则可以使用硬盘上的rec分区）
-
-4.nullarc安装过程参考其官方文档
 ## 功能状态
 
 | 功能 | 状态 |
 |---|---|
 | 显卡加速 Metal | ✅ |
 | 电池百分比 | ✅ |
-|休眠/唤醒 |⚠️ 可以休眠及唤醒，但休眠时背光无法关闭|
+| 休眠/唤醒 | ⚠️ 可以休眠及唤醒，但休眠时背光无法关闭 |
 | USB | ✅ |
 | 键盘 PS/2 | ✅ |
 | 充电状态 | ❌ 待 SSDT-ADP1 |
@@ -49,12 +49,10 @@ MT7922 无官方驱动。社区两条**实验性**路线，均未验证稳定：
 
 ## 首次使用
 
-1.编辑config可以使用OCAT项目在win下编辑
+1. 编辑 config 可以使用 OCAT 项目在 win 下编辑
+2. 请在 boot-args 下添加 `-s` 和 `-v` 以进入单用户模式和开启跑码；初次启动请先禁用 `SMCBatteryManager.kext`，否则单用户模式下会持续跑码、无法输入命令
+3. 请随机生成三码，请勿使用 EFI 自带的三码
 
-2.请在boot-args下添加-s和-v以进入单用户模式和开启跑码，初次启动请用“SMCBatteryManager.kext”
-否则在单用户模式下会导致持续性跑码无法输入命令
-
-3.请随机生成三码，请勿使用EFI自带的三码
 ## 文档
 
 `docs/INSTALL.md`、`docs/POST-INSTALL.md`、`docs/TROUBLESHOOTING.md`、`THIRD-PARTY.md`
