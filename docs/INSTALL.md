@@ -1,4 +1,4 @@
-# 安装细节
+# 安装大致过程
 
 > 本流程仅基于一台同型号机器的实测，不保证适用于所有机器，请以实际为准。
 
@@ -38,6 +38,11 @@ tips:win下可以使用diskgenies把win放入efi目录下
 | `still waiting for root device` | USB 掉盘 | 确认 `XHCILagFix.kext` 已启用 |
 | 黑屏只有光标 | 无 GPU 驱动 | 跑 `install.sh --windowserver` 并重启两次 |
 | 灰禁符 + 自动重启 | booter 拒绝 | 可能也和usb识别问题有关，请检查XHCILagFix.kext是否正确启用 |
+
+nullarc驱动属于实验性，如果你发现其在某次重启后刷新率不正常，请重新安装并重启两次
+
+
+
 
 
 
