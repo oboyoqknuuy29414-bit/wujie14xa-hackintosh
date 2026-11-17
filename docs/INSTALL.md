@@ -24,7 +24,7 @@ tips:win下可以使用diskgenies把win放入efi目录下
 - 禁用EFI中的“SMCBatteryManager.kext”否则但用户界面下会持续输出电量读取，无法输入指令
 - 看到跑码停住，不重启，并且能输入指令时为引导成功
 
-## 5.安装nullarc
+## 5.安装nullarc（密码的，我的实验性vulkanonmetal不如他们的快）
 
 - 1.确保EFI中包含“PhxBringup.kext”
 - 2.在启动U盘的界面打开终端（如果使用RDR恢复镜像安装，请检查是否有rec分区，在rec模式下打开终端）
