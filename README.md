@@ -14,7 +14,7 @@
 - PS/2 键盘 ｜ I2C HID 触控板
 - 无线：MT7922 / RZ616（`14c3:0616`）
 
-## 安装（Windows + Etcher，不需要 Mac）
+## 安装（usb刻录或者RDR恢复）
 
 1. [balenaEtcher](https://etcher.balena.io/) → `Flash from file` 选 macOS 26.6 镜像 → 16GB+ U 盘 → Flash
 2. 把本仓库 `EFI/` 覆盖到 U 盘 EFI 分区（`diskpart` 分配盘符，或 DiskGenius）
@@ -58,8 +58,10 @@ MT7922 无官方驱动。社区两条**实验性**路线，均未验证稳定：
 
 ## 首次使用
 
-config 里序列号是占位值，用 [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) 生成 `MacBookPro16,1` 的替换。**占位号别登 iCloud/App Store。**
-
+1.编辑config可以使用OCAT项目在win下编辑
+2.请在boot-args下添加-s和-v以进入单用户模式和开启跑码，初次启动请用“SMCBatteryManager.kext”
+否则在单用户模式下会导致持续性跑码无法输入命令
+3.请随机生成三码，请勿使用EFI自带的三码
 ## 文档
 
 `docs/INSTALL.md`、`docs/POST-INSTALL.md`、`docs/TROUBLESHOOTING.md`、`THIRD-PARTY.md`
