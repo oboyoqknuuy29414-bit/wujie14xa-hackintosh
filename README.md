@@ -8,13 +8,13 @@
 
 - CPU：AMD Ryzen 7 H 255（Zen4 8C/16T）
 - iGPU：Radeon 780M（RDNA3，`1002:1900`）
-- 内存 32GB ｜ 屏幕 14" 2880×1800 120Hz eDP
-- 键盘 PS/2 ｜ 触控板 I2C HID
-- 无线：MediaTek MT7922 / RZ616（`14c3:0616`）
+- 32GB LPDDR5 ｜ 14" 2880×1800 120Hz eDP
+- PS/2 键盘 ｜ I2C HID 触控板
+- 无线：MT7922 / RZ616（`14c3:0616`）
 
 ## 安装（Windows + Etcher，不需要 Mac）
 
-1. [balenaEtcher](https://etcher.balena.io/) → `Flash from file` 选 macOS 26.6 镜像 → 选 16GB+ U 盘 → Flash
+1. [balenaEtcher](https://etcher.balena.io/) → `Flash from file` 选 macOS 26.6 镜像 → 16GB+ U 盘 → Flash
 2. 把本仓库 `EFI/` 覆盖到 U 盘 EFI 分区（`diskpart` 分配盘符，或 DiskGenius）
 3. BIOS：Secure Boot 关、CSM 关、Above4G 开、ReBAR 关、**IOMMU 关**、UMA 1G
 4. U 盘启动 → 安装到 NVMe
@@ -65,6 +65,8 @@ config 里序列号是占位值，用 [GenSMBIOS](https://github.com/corpnewt/Ge
 ## 致谢
 
 [nullarc](https://github.com/luuumi-dev/nullarc)（780M 驱动）、[XHCILagFix](https://github.com/hbyonly1/XHCILagFix)（USB 延迟）、Acidanthera 全家桶。
+
+**作者**：[@oboyoqknuuy29414-bit](https://github.com/oboyoqknuuy29414-bit)（实机测试）· **DeepSeek（AI 助手）**（配置整理、文档、排障）
 
 ## 许可
 
