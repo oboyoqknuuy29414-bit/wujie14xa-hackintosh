@@ -14,25 +14,15 @@
 - PS/2 键盘 ｜ I2C HID 触控板
 - 无线：MT7922 / RZ616（`14c3:0616`）
 
-## 安装（usb刻录或者RDR恢复）
+## 安装
 
-1. [balenaEtcher](https://etcher.balena.io/) → `Flash from file` 选 macOS 26.6 镜像 → 16GB+ U 盘 → Flash
-2. 把本仓库 `EFI/` 覆盖到 U 盘 EFI 分区（`diskpart` 分配盘符，或 DiskGenius）
-3. BIOS：Secure Boot 关、CSM 关、Above4G 开、ReBAR 关、**IOMMU 关**、UMA 1G
-4. U 盘启动 → 安装到 NVMe
-5. 装完在**图形终端**（非单用户）执行：
+1.使用etcher在win下制作启动U盘
 
-```
-cd ~/Downloads/nullarc-0.4.0-alpha
-sudo ./install.sh --check
-sudo ./install.sh --windowserver
-sudo reboot
-```
+2.在将macos安装到你的磁盘上
 
-必须 `sudo`、必须真重启；重启两次后 WindowServer 才走 GPU。
+3.在启动U盘（如果你使用RDR恢复镜像法则可以使用硬盘上的rec分区）
 
-> **USB 可直接装，不需要 RDR 镜像**：EFI 内置 `XHCILagFix`，修掉 AMD 平台 ~50ms 的 USB 完成事件延迟。
-
+4.nullarc安装过程参考其官方文档
 ## 功能状态
 
 | 功能 | 状态 |
@@ -59,8 +49,10 @@ MT7922 无官方驱动。社区两条**实验性**路线，均未验证稳定：
 ## 首次使用
 
 1.编辑config可以使用OCAT项目在win下编辑
+
 2.请在boot-args下添加-s和-v以进入单用户模式和开启跑码，初次启动请用“SMCBatteryManager.kext”
 否则在单用户模式下会导致持续性跑码无法输入命令
+
 3.请随机生成三码，请勿使用EFI自带的三码
 ## 文档
 
