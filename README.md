@@ -2,11 +2,13 @@
 
 机械革命 **无界 14XA**（AMD Ryzen 7 H 255 + Radeon 780M）OpenCore 配置与安装记录。
 
+> ⚠️ 本仓库仅为一台同型号机器的实测记录，不保证适用于所有同型号机器，请以实际为准。
+
 > 状态：可安装、可日用（尝鲜级）。显卡加速/电池/休眠/USB 正常；触控板、Wi-Fi、声卡仍缺。图形驱动依赖 [nullarc](https://github.com/luuumi-dev/nullarc)（alpha）。
 
 ## 硬件
 
-- CPU：AMD Ryzen 7 H 255（Zen4 8C/16T）
+- CPU：AMD Ryzen 7 H 255（Zen4）
 - iGPU：Radeon 780M（RDNA3，`1002:1900`）
 - 32GB LPDDR5 ｜ 14" 2880×1800 120Hz eDP
 - PS/2 键盘 ｜ I2C HID 触控板
@@ -29,7 +31,7 @@ sudo reboot
 
 必须 `sudo`、必须真重启；重启两次后 WindowServer 才走 GPU。
 
-> **USB 可直接装，不需要 RDR 镜像**：EFI 内置 `XHCILagFix`，修掉 AMD 平台 ~50ms 的 USB 完成事件延迟（否则会"读盘卡死/鼠标卡顿/U 盘不识别"）。
+> **USB 可直接装，不需要 RDR 镜像**：EFI 内置 `XHCILagFix`，修掉 AMD 平台 ~50ms 的 USB 完成事件延迟。
 
 ## 功能状态
 
@@ -64,7 +66,7 @@ config 里序列号是占位值，用 [GenSMBIOS](https://github.com/corpnewt/Ge
 
 ## 致谢
 
-[nullarc](https://github.com/luuumi-dev/nullarc)（780M 驱动）、[XHCILagFix](https://github.com/hbyonly1/XHCILagFix)（USB 延迟）、Acidanthera 全家桶。
+[nullarc](https://github.com/luuumi-dev/nullarc)（780M 驱动）、[XHCILagFix](https://github.com/hbyonly1/XHCILagFix)（USB 延迟）。
 
 **作者**：[@oboyoqknuuy29414-bit](https://github.com/oboyoqknuuy29414-bit)（实机测试）· **DeepSeek（AI 助手）**（配置整理、文档、排障）
 
